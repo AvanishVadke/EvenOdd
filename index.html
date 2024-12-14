@@ -20,7 +20,7 @@
       </div>
       <h1>Even Odd App</h1>
 
-      <form onsubmit="check(event)">
+      <form onsubmit="check()">
         <input type="number" id="num" placeholder="Enter a number" />
         <br />
         <br />
@@ -29,7 +29,7 @@
       <h2 id="msg"></h2>
     </center>
     <script>
-      function check(event) {
+      function check() {
         event.preventDefault();
         const numInput = document.getElementById("num");
         const msgElement = document.getElementById("msg");
@@ -42,7 +42,8 @@
         }
         const number = parseInt(numInput.value);
         const result = number % 2 === 0 ? "even" : "odd";
-        msgElement.innerHTML = `The number ${number} is ${result}`;
+        let ans = "The" +  number + " is " + result;
+        msgElement.innerHTML = ans
       }
     </script>
   </body>
