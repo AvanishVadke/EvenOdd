@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Even Odd App by Avanish</title>
+    <link rel="stylesheet" href="./app.css" />
+  </head>
+  <body>
+    <center>
+      <div class="nav">
+        <a href="index.html">
+          <img src="home.png" alt="home Image" />
+          Home
+        </a>
+        <a href="about.html">
+          <img src="about.png" alt="about Image" />
+          about
+        </a>
+      </div>
+      <h1>Even Odd App</h1>
+
+      <form onsubmit="check(event)">
+        <input type="number" id="num" placeholder="Enter a number" />
+        <br />
+        <br />
+        <input type="submit" value="Check Even Odd" />
+      </form>
+      <h2 id="msg"></h2>
+    </center>
+    <script>
+      function check(event) {
+        event.preventDefault();
+        const numInput = document.getElementById("num");
+        const msgElement = document.getElementById("msg");
+
+        if (numInput.value === "") {
+          alert("Please enter an integer");
+          msgElement.innerHTML = "";
+          numInput.focus();
+          return;
+        }
+        const number = parseInt(numInput.value);
+        const result = number % 2 === 0 ? "even" : "odd";
+        msgElement.innerHTML = `The number ${number} is ${result}`;
+      }
+    </script>
+  </body>
+</html>
